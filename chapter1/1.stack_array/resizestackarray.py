@@ -49,6 +49,18 @@ class ResizeStackArray:
             self.resize(len(self.item_ary) // 2)
         return ele
 
+    def __iter__(self):
+        self.index = 0
+        return self
+
+    def __next__(self):
+        if self.index >= self.n:
+            raise StopIteration
+
+        n = self.item_ary[self.index]
+        self.index += 1
+        return n
+
 
 
 

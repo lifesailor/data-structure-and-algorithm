@@ -43,3 +43,16 @@ class FixedCapacityStack:
         ele = self.item_ary[self.n]
         self.item_ary[self.n] = None
         return ele
+
+    def __iter__(self):
+        self.index = 0
+        return self
+
+    def __next__(self):
+        if self.index >= self.n:
+            raise StopIteration
+
+        n = self.item_ary[self.index]
+        self.index += 1
+        return n
+
