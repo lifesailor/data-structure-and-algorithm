@@ -1,13 +1,12 @@
 """
-선입선출 Queue는 먼저 들어간 것이 먼저 나오는 것을 정책으로 하는 컬렉션이다.
+백은 항목을 삭제할 수 없는 컬렉션이다. 백의 목적은 항목을 수집하고 수집된 항목들을 순회할 수 있는 도구를 제공하는 것이다.
 
-Queue API
+Bag API
+- Bag(): 공백 백 생성
+- add(Item item): 항목 추가
+- is_empty(): 백이 비어 있는가.
+- int size(): 백에 든 항목 개수
 
-- Queue(): 비어 있는 큐 생성
-- void enqueue(Item item): 항목 추가
-- void dequeue(): 최근에 추가된 항목 제거
-- boolean is_empty(): 큐가 비었는가?
-- int size(): 큐에 든 항목 개수
 """
 
 
@@ -17,12 +16,12 @@ class Node:
         self.item = None
 
 
-class Queue:
+class Bag:
     def __init__(self):
         self.first = None
         self.n = 0
 
-    def enqueue(self, item):
+    def add(self, item):
         next = self.first
 
         if next is None:
@@ -37,14 +36,6 @@ class Queue:
         next.node = Node()
         next.node.item = item
         self.n += 1
-
-    def dequeue(self):
-        assert self.n > 0
-
-        first = self.first
-        self.first = first.node
-        self.n -= 1
-        return first.item
 
     def is_empty(self):
         if self.n == 0:

@@ -46,3 +46,16 @@ class Stack:
 
     def size(self):
         return self.n
+
+    def __iter__(self):
+        self.index = 0
+        self.current = self.first
+        return self
+
+    def __next__(self):
+        if self.index >= self.n:
+            raise StopIteration
+
+        self.current = self.current.node
+        self.index += 1
+        return self.current.item
