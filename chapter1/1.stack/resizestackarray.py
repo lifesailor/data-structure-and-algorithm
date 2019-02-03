@@ -1,12 +1,16 @@
+"""
+ResizeStackArray API
+
+- ResizeStackArray(): 빈 스택 생성
+- void push(Item): 항목 추가
+- Item pop(): 가장 최근에 추가된 항목 제거
+- boolean is_empty(): 스택이 비었는가?
+- int size(): 스택에 든 항목 개수
+- void resize(): 스택 크기 변경
+"""
+
+
 class ResizeStackArray:
-    """
-    - ResizeStackArray: 빈 스택 생성
-    - void push(Item): 항목 추가
-    - Item pop(): 가장 최근에 추가된 항목 제거
-    - boolean is_empty(): 스택이 비었는가?
-    - int size(): 스택에 든 항목 개수
-    - void resize(): 스택 크기 변경
-    """
     def __init__(self):
         self.item_ary = []
         self.n = 0

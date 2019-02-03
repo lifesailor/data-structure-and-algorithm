@@ -1,10 +1,10 @@
+"""
+ResizeStackArray(배열 크기 변경 구현) 클라이언트
+"""
 from resizestackarray import ResizeStackArray
 
 
 class Client:
-    """
-    FixedCapcityStack client
-    """
     def test(self, args):
         stack = ResizeStackArray()
 
