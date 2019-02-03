@@ -1,4 +1,6 @@
 """
+후입선출 스택은 마지막으로 들어간 것이 가장 먼저 나오는 정책을 가지는 컬렉션이다.
+
 FixedCapacityStack API
 
 - FixedCapacityStackOfStrings(int cap) cap을 용량으로 하는 빈 스택 생성
