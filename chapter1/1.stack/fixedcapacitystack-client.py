@@ -1,10 +1,10 @@
+"""
+fixedcapacitystack-client.py
+"""
 from fixedcapacitystack import FixedCapacityStack
 
 
 class Client:
-    """
-    FixedCapcityStack client
-    """
     def test(self, args):
         stack = FixedCapacityStack(100)
 

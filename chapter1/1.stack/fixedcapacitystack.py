@@ -1,12 +1,14 @@
-class FixedCapacityStack:
-    """
-    - FixedCapacityStackOfStrings(int cap) cap을 용량으로 하는 빈 스택 생성
-    - void push(Item): 항목 추가
-    - Item pop(): 가장 최근에 추가된 항목 제거
-    - boolean is_empty(): 스택이 비었는가?
-    - int size(): 스택에 든 항목 개수
-    """
+"""
+FixedCapacityStack API
 
+- FixedCapacityStackOfStrings(int cap) cap을 용량으로 하는 빈 스택 생성
+- void push(Item): 항목 추가
+- Item pop(): 가장 최근에 추가된 항목 제거
+- boolean is_empty(): 스택이 비었는가?
+- int size(): 스택에 든 항목 개수
+"""
+
+class FixedCapacityStack:
     def __init__(self, cap):
         """
         item_ary: fixed size array
