@@ -24,7 +24,7 @@ class Client:
             elif item is "-": ops.push(item)
             elif item is "*": ops.push(item)
             elif item is "/": ops.push(item)
-            elif item is "sqrt": ops.push(item)
+            elif item == "sqrt": ops.push(item)
             elif item is ")":
                 op = ops.pop()
                 v = vals.pop()
@@ -32,7 +32,7 @@ class Client:
                 elif op is "-": v = vals.pop() - v
                 elif op is "*": v = vals.pop() * v
                 elif op is "/": v = vals.pop() / v
-                elif op is "sqrt": v = math.sqrt(v)
+                elif op == "sqrt": v = math.sqrt(v)
                 vals.push(v)
             else:
                 vals.push(float(item))
@@ -41,6 +41,6 @@ class Client:
 
 if __name__ == "__main__":
     stack_client = Client()
-    # expression = "( 1 + ( ( 2 + 3 ) * ( 4 + 5 ) ) )"
-    expression = "( ( 1 + sqrt ( 5.0 ) ) / 2.0 )"
-    stack_client.test(expression.split(' '))
+    # expression = "( 1 + ( ( 2 + 3 ) * ( 4 + 5 ) ) )".split(" ")
+    expression = "( ( 1 + sqrt ( 5.0 ) ) / 2.0 )".split(" ")
+    stack_client.test(expression)
