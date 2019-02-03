@@ -1,5 +1,5 @@
 """
-fixedcapacitystack-client.py
+FixedCapacityStack 클라이언트
 """
 from fixedcapacitystack import FixedCapacityStack
 
