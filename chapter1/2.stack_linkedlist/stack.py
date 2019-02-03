@@ -1,6 +1,7 @@
 """
 Stack API
 
+- StacK(): 비어 있는 스택 생성
 - void push(Item): 항목 추가
 - Item pop(): 가장 최근에 추가된 항목 제거
 - boolean is_empty(): 스택이 비었는가?
