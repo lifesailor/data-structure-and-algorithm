@@ -39,3 +39,5 @@ class InsertionSort:
             for j in range(i, 0, -1):
                 if cls.less(ary[j], ary[j-1]):
                     cls.exch(ary, j, j-1)
+                else:
+                    break
