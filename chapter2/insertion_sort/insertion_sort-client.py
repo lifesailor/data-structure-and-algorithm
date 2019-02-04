@@ -8,10 +8,9 @@ from insertion_sort import InsertionSort
 
 class Client:
     def test(self, args):
-        selection = InsertionSort(args)
-        selection.sort()
-        assert selection.is_sorted()
-        selection.show()
+        InsertionSort.sort(args)
+        assert InsertionSort.is_sorted(args)
+        InsertionSort.show(args)
 
 
 if __name__ == "__main__":

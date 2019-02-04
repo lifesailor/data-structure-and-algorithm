@@ -11,29 +11,31 @@ Insertion Sort(삽입 정렬)은 항목을 삽입할 공간을 만들기 위해 
 
 
 class InsertionSort:
-    def __init__(self, args):
-        self.ary = args
-
-    def less(self, v, w):
+    @classmethod
+    def less(cls, v, w):
         return v < w
 
-    def exch(self, i, j):
-        temp = self.ary[i]
-        self.ary[i] = self.ary[j]
-        self.ary[j] = temp
+    @classmethod
+    def exch(cls, ary, i, j):
+        temp = ary[i]
+        ary[i] = ary[j]
+        ary[j] = temp
 
-    def is_sorted(self):
-        for i in range(1, len(self.ary)):
-            if self.less(self.ary[i], self.ary[i-1]):
+    @classmethod
+    def is_sorted(cls, ary):
+        for i in range(1, len(ary)):
+            if cls.less(ary[i], ary[i-1]):
                 return False
             return True
 
-    def show(self):
-        for i in range(len(self.ary)):
-            print(self.ary[i], end=' ')
+    @classmethod
+    def show(cls, ary):
+        for i in range(len(ary)):
+            print(ary[i], end=' ')
 
-    def sort(self):
-        for i in range(1, len(self.ary)):
+    @classmethod
+    def sort(cls, ary):
+        for i in range(1, len(ary)):
             for j in range(i, 0, -1):
-                if self.less(self.ary[j], self.ary[j-1]):
-                    self.exch(j, j-1)
+                if cls.less(ary[j], ary[j-1]):
+                    cls.exch(ary, j, j-1)
