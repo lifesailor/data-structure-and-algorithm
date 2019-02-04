@@ -12,36 +12,37 @@ Selection Sort API
 
 
 class SelectionSort:
-    def __init__(self, args):
-        self.ary = args
-
-    def less(self, v, w):
+    @classmethod
+    def less(cls, v, w):
         return v < w
 
-    def exch(self, i, j):
-        temp = self.ary[i]
-        self.ary[i] = self.ary[j]
-        self.ary[j] = temp
+    @classmethod
+    def exch(cls, ary, i, j):
+        temp = ary[i]
+        ary[i] = ary[j]
+        ary[j] = temp
 
-    def is_sorted(self):
-        for i in range(1, len(self.ary)):
-            if self.less(self.ary[i], self.ary[i-1]):
+    @classmethod
+    def is_sorted(cls, ary):
+        for i in range(1, len(ary)):
+            if cls.less(ary[i], ary[i-1]):
                 return False
             return True
 
-    def show(self):
-        for i in range(len(self.ary)):
-            print(self.ary[i], end=' ')
+    @classmethod
+    def show(cls, ary):
+        for i in range(len(ary)):
+            print(ary[i], end=' ')
 
-    def sort(self):
-
+    @classmethod
+    def sort(cls, ary):
         # repeat from 0 to len(ary) - 1
-        for j in range(len(self.ary)):
-            min_index = j
+        for i in range(len(ary)):
+            min_index = i
 
             # find min index
-            for i in range(j, len(self.ary)):
-                if self.ary[i] < self.ary[min_index]:
-                    min_index = i
+            for j in range(i+1, len(ary)):
+                if cls.less(ary[j], ary[min_index]):
+                    min_index = j
 
-            self.exch(j, min_index)
+            cls.exch(ary, i, min_index)

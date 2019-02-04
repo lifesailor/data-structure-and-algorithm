@@ -8,10 +8,9 @@ from selection_sort import SelectionSort
 
 class Client:
     def test(self, args):
-        selection = SelectionSort(args)
-        selection.sort()
-        assert selection.is_sorted()
-        selection.show()
+        SelectionSort.sort(args)
+        assert SelectionSort.is_sorted(args)
+        SelectionSort.show(args)
 
 
 if __name__ == "__main__":
