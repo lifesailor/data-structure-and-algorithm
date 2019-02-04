@@ -7,6 +7,7 @@ Selection Sort API
 2) void exch(Comparable[] a, int i, int j)
 3) boolean is_sorted(Comparable[] a) - 배열 항목이 정렬되어 있는지 검사
 4) void show(Comparable[] a) - 배열 내용을 한 줄로 출력
+5) void sort() - 정렬
 """
 
 
