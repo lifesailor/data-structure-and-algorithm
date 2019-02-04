@@ -14,13 +14,17 @@ class Client:
 
 
 if __name__ == "__main__":
+
+    # client
+    client = Client()
+
+    # input
     args = []
     for line in sys.stdin:
         arg = line.rstrip().split(" ")
         args.extend(arg)
 
-    client = Client()
-
+    # test
     start_time = time.time()
     client.test(args)
     end_time = time.time()
