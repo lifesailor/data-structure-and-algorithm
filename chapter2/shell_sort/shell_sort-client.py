@@ -9,7 +9,6 @@ from shell_sort import ShellSort
 class Client:
     def test(self, args):
         ShellSort.sort(args)
-        print(args)
         assert ShellSort.is_sorted(args)
         ShellSort.show(args)
 
