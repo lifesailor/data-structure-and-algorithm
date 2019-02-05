@@ -1,8 +1,8 @@
 """
-Quick3 Sort는 분할 정복 기법을 이용한 정렬 방법이다.
+Quick Sort는 분할 정복 기법을 이용한 정렬 방법이다.
 
 Merge Sort API
-1) void compare(Comparable v, Comparable w)
+1) void less(Comparable v, Comparable w)
 2) void exch(Comparable[] a, int i, int j)
 3) boolean is_sorted(Comparable[] a) - 배열 항목이 정렬되어 있는지 검사
 4) void show(Comparable[] a) - 배열 내용을 한 줄로 출력
@@ -13,17 +13,8 @@ Merge Sort API
 import random
 
 
-class Quick3Sort:
+class QuickSort:
     aux = None
-
-    @classmethod
-    def compare(cls, v, w):
-        if v < w:
-            return -1
-        elif v == w:
-            return 0
-        else:
-            return 1
 
     @classmethod
     def less(cls, v, w):
@@ -54,35 +45,47 @@ class Quick3Sort:
     @classmethod
     def sort(cls, ary):
         random.shuffle(ary)
-        cls.quick3_sort(ary, 0, len(ary) - 1)
+        cls.quick_sort(ary, 0, len(ary) - 1)
 
     @classmethod
-    def quick3_sort(cls, ary, lo=None, hi=None):
+    def quick_sort(cls, ary, lo=None, hi=None):
         if hi <= lo:
             return
 
-        lt = lo
-        i = lo + 1
-        gt = hi
+        j = cls.partition(ary, lo, hi)
+        cls.quick_sort(ary, lo, j - 1)
+        cls.quick_sort(ary, j + 1, hi)
 
+    @classmethod
+    def partition(cls, ary, lo, hi):
+        i = lo
+        j = hi + 1
         v = ary[lo]
 
-        while i <= gt:
-            cmap = cls.compare(ary[i], v)
+        i += 1
+        j -= 1
 
-            if cmap < 0:
-                cls.exch(ary, lt, i)
-                lt = lt + 1
-                i = i + 1
-            elif cmap > 0:
-                cls.exch(ary, i, gt)
-                gt = gt - 1
-            else:
+        while True:
+
+            # from left
+            while cls.less(ary[i], v):
+                if i == hi:
+                    break
                 i += 1
 
-        cls.quick3_sort(ary, lo, lt - 1)
-        cls.quick3_sort(ary, gt + 1, hi)
+            # from right
+            while cls.less(v, ary[j]):
+                if j == lo:
+                    break
+                j -= 1
 
+            # index intersect
+            if i >= j:
+                break
 
+            # exchange
+            cls.exch(ary, i, j)
 
-
+        # exchange v into j
+        cls.exch(ary, lo, j)
+        return j
