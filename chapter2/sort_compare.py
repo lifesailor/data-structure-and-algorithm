@@ -2,10 +2,10 @@ import time
 import random
 from selection_sort.selection_sort import SelectionSort
 from insertion_sort.insertion_sort import InsertionSort
+from shell_sort.shell_sort import ShellSort
 
 
 class SortCompare:
-
     @classmethod
     def time(cls, alg, ary):
         start_time = time.time()
@@ -14,6 +14,8 @@ class SortCompare:
             SelectionSort.sort(ary)
         elif alg == "Insertion":
             InsertionSort.sort(ary)
+        elif alg == "Shell":
+            ShellSort.sort(ary)
         end_time = time.time()
         return end_time - start_time
 
@@ -32,12 +34,13 @@ class SortCompare:
 if __name__ == "__main__":
     alg1 = "Insertion"
     alg2 = "Selection"
+    alg3 = "Shell"
     N = 1000
-    T = 100
+    T = 10
 
     t1 = SortCompare.time_random_input(alg1, N, T)
-    t2 = SortCompare.time_random_input(alg2, N, T)
+    t2 = SortCompare.time_random_input(alg3, N, T)
 
     print("For {} random doubles".format(N))
-    print("{0} is {2} times faster than {1}".format(alg1, alg2, t2/t1))
+    print("{0} is {2} times faster than {1}".format(alg1, alg3, t2/t1))
 
