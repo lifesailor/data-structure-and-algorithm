@@ -37,10 +37,6 @@ class MergeSort:
             print(ary[i], end=' ')
 
     @classmethod
-    def sort(cls, ary):
-        pass
-
-    @classmethod
     def merge(cls, ary, lo, mid, hi):
         """
         ary[0..mid]와 ary[mid+1..hi]를 병합

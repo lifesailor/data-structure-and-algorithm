@@ -5,6 +5,7 @@ from insertion_sort.insertion_sort import InsertionSort
 from shell_sort.shell_sort import ShellSort
 from merge_sort.top_down_merge_sort import MergeSort
 from quick_sort.quick_sort import QuickSort
+from heap_sort.heap_sort import HeapSort
 
 
 class SortCompare:
@@ -22,6 +23,8 @@ class SortCompare:
             MergeSort.sort(ary)
         elif alg == "Quick":
             QuickSort.sort(ary)
+        elif alg == "Heap":
+            HeapSort.sort(ary)
         end_time = time.time()
         return end_time - start_time
 
